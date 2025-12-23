@@ -76,3 +76,79 @@ if __name__ == '__main__':
     arr = list(map(int, input().split()))
     result = average(arr)
     print(result)
+
+"""
+Task
+Given  sets of integers,  and , print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either  or  but do not exist in both.
+
+Input Format
+
+The first line of input contains an integer, .
+The second line contains  space-separated integers.
+The third line contains an integer, .
+The fourth line contains  space-separated integers.
+
+Output Format
+
+Output the symmetric difference integers in ascending order, one per line.
+
+Sample Input
+
+STDIN       Function
+-----       --------
+4           set a size M = 4
+2 4 5 9     a = {2, 4, 5, 9}
+4           set b size N = 4
+2 4 11 12   b = {2, 4, 11, 12}
+Sample Output
+
+5
+9
+11
+12
+Language
+Pypy 3
+More
+12345678
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+M=int(input())
+set_M=set(map(int,input().split()))
+N=int(input())
+set_N=set(map(int,input().split()))
+diff=set_M.symmetric_difference(set_N)
+for i in sorted(diff):
+    print(i)
+Line: 8 Col: 13
+
+Test against custom input
+Congratulations!
+
+You have passed the sample test cases. Click the submit button to run your code against all the test cases.
+
+
+Sample Test case 0
+
+Sample Test case 1
+Input (stdin)
+4
+2 4 5 9
+4
+2 4 11 12
+Your Output (stdout)
+5
+9
+11
+12
+Expected Output
+5
+9
+11
+12
+"""
+M=int(input())
+set_M=set(map(int,input().split()))
+N=int(input())
+set_N=set(map(int,input().split()))
+diff=set_M.symmetric_difference(set_N)
+for i in sorted(diff):
+    print(i)
