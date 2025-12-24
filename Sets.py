@@ -101,45 +101,6 @@ STDIN       Function
 4           set b size N = 4
 2 4 11 12   b = {2, 4, 11, 12}
 Sample Output
-
-5
-9
-11
-12
-Language
-Pypy 3
-More
-12345678
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-M=int(input())
-set_M=set(map(int,input().split()))
-N=int(input())
-set_N=set(map(int,input().split()))
-diff=set_M.symmetric_difference(set_N)
-for i in sorted(diff):
-    print(i)
-Line: 8 Col: 13
-
-Test against custom input
-Congratulations!
-
-You have passed the sample test cases. Click the submit button to run your code against all the test cases.
-
-
-Sample Test case 0
-
-Sample Test case 1
-Input (stdin)
-4
-2 4 5 9
-4
-2 4 11 12
-Your Output (stdout)
-5
-9
-11
-12
-Expected Output
 5
 9
 11
@@ -152,3 +113,33 @@ set_N=set(map(int,input().split()))
 diff=set_M.symmetric_difference(set_N)
 for i in sorted(diff):
     print(i)
+
+"""
+There is an array of  integers. There are also  disjoint sets,  and , each containing  integers. You like all the integers in set  and dislike all the integers in set . Your initial happiness is . For each  integer in the array, if , you add  to your happiness. If , you add  to your happiness. Otherwise, your happiness does not change. Output your final happiness at the end.
+Note: Since  and  are sets, they have no repeated elements. However, the array might contain duplicate elements.
+Input Format
+The first line contains integers  and  separated by a space.
+The second line contains  integers, the elements of the array.
+The third and fourth lines contain  integers,  and , respectively.
+
+Output Format
+Output a single integer, your total happiness.
+Sample Input
+3 2
+1 5 3
+3 1
+5 7
+Sample Output
+1
+"""
+n, m = map(int,input().split())
+arr = list(map(int, input().split()))
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+happiness = 0
+for i in arr:
+    if i in A:
+        happiness += 1
+    elif i in B:
+        happiness -= 1
+print(happiness)
