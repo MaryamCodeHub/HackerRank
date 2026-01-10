@@ -1,0 +1,16 @@
+# HackerRank Task: Symmetric Difference
+# Difficulty: Easy
+# Task: Print elements present in either set but not in both.
+# Output: Elements in ascending order
+# Concept: symmetric_difference(), sorted()
+
+M = int(input())
+set_M = set(map(int, input().split()))
+
+N = int(input())
+set_N = set(map(int, input().split()))
+
+diff = set_M.symmetric_difference(set_N)
+
+for x in sorted(diff):
+    print(x)
