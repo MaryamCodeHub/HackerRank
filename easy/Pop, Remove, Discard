@@ -1,0 +1,26 @@
+## Set Operations: pop, remove, discard
+# Difficulty: Easy
+# Task: Execute given set commands and print the sum of remaining elements.
+# Notes:
+# - remove(x): raises KeyError if x not in set
+# - discard(x): removes x if present, no error
+# - pop(): removes an arbitrary element
+# Link: https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem?isFullScreen=true
+
+n = int(input())
+s = set(map(int, input().split()))
+num_cmmd = int(input())
+
+for i in range(num_cmmd):
+    cmd = input().split()  # no need to lower()
+    if cmd[0] == "pop":
+        s.remove(min(s))   # predictable pop
+    elif cmd[0] == "remove":
+        try:
+            s.remove(int(cmd[1]))
+        except KeyError:
+            pass
+    elif cmd[0] == "discard":
+        s.discard(int(cmd[1]))
+
+print(sum(s))
