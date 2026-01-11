@@ -1,0 +1,13 @@
+# HackerRank Task: Set .union() Operation
+# Difficulty: Easy
+# Task: Given two sets of student roll numbers (English & French newspaper subscribers),
+# find the total number of students who have subscribed to at least one newspaper(Students subscribed to both should be counted once.)
+# Output: Output the total number of students who have at least one subscription.
+# Concept: set(), Union of sets
+
+
+n_eng = int(input())
+n_eng_rollno = set(map(int,input().split()))
+n_french = int(input())
+n_french_rollno = set(map(int,input().split()))
+print(len(n_eng_rollno.union(n_french_rollno)))
