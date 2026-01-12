@@ -1,0 +1,13 @@
+# HackerRank Task: Set .intersection() Operation
+# Difficulty: Easy
+# Task:
+#You are given two sets of student roll numbers. One set has subscribed to the English newspaper, one set has subscribed to the French newspaper. 
+#Your task is to find the total number of students who have subscribed to both newspapers.
+# Output: Output the total number of students who have both subscriptions.
+# Concept: set(), intersection of sets
+
+n_eng = int(input())
+n_eng_rollno = set(map(int,input().split()))
+n_french = int(input())
+n_french_rollno = set(map(int,input().split()))
+print(len(n_eng_rollno.intersection(n_french_rollno)))
