@@ -1,0 +1,14 @@
+# HackerRank Task: Set .symmetric_difference() Operation
+# Difficulty: Easy
+# Task:
+#You are given two sets of student roll numbers. One set has subscribed to the English newspaper, one set has subscribed to the French newspaper. 
+#Your task is to find the total number of students who have subscribed to either the English or the French newspaper but not both.
+# Output: Output the total number of students who have both subscriptions.
+# Concept: set(),  .symmetric_difference of sets
+
+
+n_eng = int(input())
+n_eng_rollno = set(map(int,input().split()))
+n_french = int(input())
+n_french_rollno = set(map(int,input().split()))
+print(len(n_eng_rollno.symmetric_difference(n_french_rollno)))
