@@ -1,0 +1,39 @@
+## Task
+
+You are given a set `A` and `N` other sets.  
+These `N` sets have to perform some specific mutation operations  on set `A`.  
+Your task is to execute those operations and print the sum of elements from set `A`.
+
+## Input Format
+1. First line: integer, number of elements in set `A`.  
+2. Second line: space-separated list of elements in set `A`.  
+3. Third line: integer, number of other sets `N`.  
+4. Next `2 * N` lines: Each operation is described in **two lines**:
+    - First line: operation name and size of the other set
+    - second line: get another set using an input
+    - third and onward lines: apply operations 
+
+
+## Output Format
+Print the sum of elements in set `A` after all operations.
+
+##Solution:
+
+no_a = int(input())
+set_a = set(map(int,input().split()))
+no_opr = int(input())
+for i in range(no_opr):
+    operation_size= input().split()
+    opr_name = operation_size[0]
+    set_b = set(map(int,input().split()))
+    
+    if opr_name == 'update' or opr_name == '|=':
+        set_a.update(set_b)
+    elif opr_name == 'intersection_update' or opr_name == '&=':
+        set_a.intersection_update(set_b)
+    elif opr_name == 'difference_update' or opr_name == '-=':
+        set_a.difference_update(set_b)
+    elif opr_name == 'symmetric_difference_update' or opr_name == '^=':
+        set_a.symmetric_difference_update(set_b)
+
+print(sum(set_a))
