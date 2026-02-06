@@ -1,0 +1,17 @@
+## Problem Description
+#Mr. Anant Asankhya manages the INFINITE Hotel, which has an infinite number of rooms. One day, a finite number of tourists arrive, consisting of:
+#One Captain, who is assigned a unique room
+#Multiple families, where each family consists of k members
+#Each family is assigned one room per group
+#You are given an unordered list of room numbers.
+#Each family’s room number appears exactly k times, while the Captain’s room number appears only once.
+#Your task is to identify and print the Captain’s room number.
+
+k = int(input())                      # size of each group
+room_list = list(map(int, input().split()))
+
+for room in room_list:
+    total = room_list.count(room)
+    if total != k:
+        print(room)
+        break
